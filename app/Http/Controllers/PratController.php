@@ -109,6 +109,7 @@ class PratController extends Controller
         $DelPrat = Praticien::find($id);
         $TestDelete = DB::table('MISSION')->where('ID_Praticien', $id)->get();
         $TestDelete->ID_MISSION = (array) $TestDelete;
+        //on regarde si il a plus de 0 mission, si c'est le cas on envoie une erreur
         if (count($TestDelete) > 0) {
            return redirect()->route('prat.index')->withErrors('Erreur : Ce Praticien est Affecté à une Mission et ne Peut pas etre Supprimé !');
             var_dump(count($TestDelete));
