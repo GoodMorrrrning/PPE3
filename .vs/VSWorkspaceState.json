@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\public"
+    "\\public",
+    "\\routes"
   ],
-  "SelectedNode": "\\app\\Mission.php",
+  "SelectedNode": "\\routes\\web.php",
   "PreviewInSolutionExplorer": false
 }
