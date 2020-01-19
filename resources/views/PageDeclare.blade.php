@@ -21,9 +21,10 @@
 <br>
 
 
-<label for="Ticketimg" class="col-md-4 col-form-label text-md-center">{{ __('Ticketimg') }}</label>
- <div class="col-md-6">
-     <input id="Ticketimg" type="file" class="custom-file-label @error('Ticketimg') is-invalid @enderror" name="Ticketimg" enctype="multipart/form-data" required autocomplete="Ticketimg" autofocus> @error('custom-file')
+
+ <div class="col-md-6 custom-file">
+    <label for="Ticketimg" class="custom-file-label">{{ __('Ticketimg') }}</label>
+     <input id="Ticketimg" type="file" class="custom-file-input @error('Ticketimg') is-invalid @enderror" name="Ticketimg" enctype="multipart/form-data" required autocomplete="Ticketimg" autofocus> @error('custom-file')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
@@ -41,9 +42,9 @@
 
 
 
-<label for="ticketcarbu" class="col-md-4 col-form-label text-md-center">{{ __('ticketcarbu') }}</label>
- <div class="col-md-6">
-     <input id="ticketcarbu" type="file" class="custom-file-label @error('ticketcarbu') is-invalid @enderror" name="ticketcarbu"  required autocomplete="ticketcarbu" autofocus> @error('ticketcarbu')
+<div class="col-md-6 custom-file">
+    <label for="ticketcarbu" class="custom-file-label">{{ __('ticketcarbu') }}</label>
+     <input id="ticketcarbu" type="file" class="custom-file-input @error('ticketcarbu') is-invalid @enderror" name="ticketcarbu" enctype="multipart/form-data" required autocomplete="Ticketimg" autofocus> @error('ticketcarbu')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
@@ -61,17 +62,23 @@
     <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
  </span> @enderror
-
+</div>
 <br><br>
 
 
-<label for="ticketmanger" class="col-md-4 col-form-label text-md-center">{{ __('ticketmanger') }}</label>
- <div class="col-md-6">
-     <input id="ticketmanger" type="file" class="custom-file-label @error('ticketmanger') is-invalid @enderror" name="ticketmanger"  required autocomplete="ticketmanger" autofocus> @error('ticketmanger')
+
+
+
+
+<div class="col-md-6 custom-file">
+    <label for="ticketmanger" class="custom-file-label">{{ __('ticketmanger') }}</label>
+     <input id="ticketmanger" type="file" class="custom-file-input @error('ticketmanger') is-invalid @enderror" name="ticketmanger" enctype="multipart/form-data" required autocomplete="ticketmanger" autofocus> @error('ticketmanger')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
  </div>
+<br>
+
 
 <br>
 

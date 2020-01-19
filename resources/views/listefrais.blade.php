@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -41,27 +41,42 @@
                             Type frais : {{$frais->TypeCarburant}}, Montant de ce frais : {{$frais->MontantCarburant}}.
                             <br>
                             Type frais : {{$frais->TypeManger}}, Montant de ce frais : {{$frais->MontantManger}}.<br>
-                            <div class="card" style="width: 18rem; display:block;">
-                            <img src="{{asset("$frais->TicketHotel")}}" class="img-fluid" alt="">
-                            <img src="{{asset("$frais->TicketCarbu")}}" class="img-fluid" alt="">
-                            <img src="{{asset("$frais->TicketManger")}}" class="img-fluid" alt="">
-                            <div class="card-body">
-                            <h5 class="card-title">Ticket Payements</h5>
-                            <p class="card-text">Clickez ici pour télécharger la preuve de frais des visiteurs médicaux.</p>
-                            <a href="{{asset("$frais->TicketHotel")}}" download class="btn btn-primary">Télécharger</a>
-                            </div>
-                            </div>
-
-                            <br>
-
                             @php
 
                             $somme = $frais->Montant+$frais->MontantCarburant+$frais->MontantManger;
-                            echo 'somme pour cette Mission : ='.$somme;
+                            echo 'somme pour cette Mission : = '.$somme;
 
                             $test =$test+$somme;
 
                             @endphp
+<br><br>
+                            @if($frais->TicketHotel != null)
+                            <div class="card-group" style="position:relative">
+                                <div class="card"><img src="{{asset("$frais->TicketHotel")}}" class="card-img w-100 d-flex">
+                                    <div class="card-body" style="position:absolute; bottom:0; left:70px;">
+
+                                        <p class="card-text">Cliquez en dessous</p><a class="btn btn-primary" href="{{asset("$frais->TicketHotel")}}" download type="button">Télécharger !</a></div>
+                                </div>
+                            <div class="card"><img src="{{asset("$frais->TicketCarbu")}}" class="card-img w-100 d-flex">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Preuve de Frais</h4>
+                                    <p class="card-text">Cliquez sur les bouttons ce-dessous pour télécharger les preuves de payement. </p><a class="btn btn-primary" href="{{asset("$frais->TicketCarbu")}}" download type="button">Télécharger !</a></div>
+                                </div>
+                                <div class="card"><img src="{{asset("$frais->TicketManger")}}" class="card-img w-100 d-flex">
+                                    <div class="card-body">
+
+                                        <p class="card-text">Cliquez en dessous</p><a class="btn btn-primary" href="{{asset("$frais->TicketManger")}}" download type="button">Télécharger !</a></div>
+                                </div>
+                            </div>
+                            <script src="assets/js/jquery.min.js"></script>
+                            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+                            @else
+                            <p class="card-text"> Image non Disponible.
+                            @endif
+
+                            <br>
+
+
                              </div>
                         </strong>
 
