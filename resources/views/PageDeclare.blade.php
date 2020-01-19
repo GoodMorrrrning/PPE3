@@ -36,7 +36,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-text">Image actuelle pour frais d'hotel</h5>
+          <p class="card-text">Image actuelle pour frais d'hotel</p>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
      </div>
      <div class="col-md-8">
        <div class="card-body">
-         <h5 class="card-text">Image actuelle pour frais de carburant</h5>
+         <p class="card-text">Image actuelle pour frais de carburant</p>
        </div>
      </div>
    </div>
@@ -115,7 +115,7 @@
      </div>
      <div class="col-md-8">
        <div class="card-body">
-         <h5 class="card-text">Image actuelle pour frais de nouriture</h5>
+         <p class="card-text">Image actuelle pour frais de nouriture</p>
        </div>
      </div>
    </div>
