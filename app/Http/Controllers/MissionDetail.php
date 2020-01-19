@@ -20,7 +20,7 @@ class MissionDetail extends Controller
     public function DeclareFrais($idMission, Request $request)
     {
 
-       // $image = $request->input('Ticketimg');
+
         $imageCarbu = $request->input('ticketcarbu');
         $imageManger = $request->input('ticketmanger');
         $prixhotel = $request->input('PrixHotel');
@@ -28,14 +28,17 @@ class MissionDetail extends Controller
         $prixManger = $request->input('PrixManger');
         date_default_timezone_set('Europe/Paris');
         $pdate = date('Y-m-d H:i');
-       echo gettype($request->input('Ticketimg'));
-        $path = $request->file('Ticketimg')->store('public/Test');
+        //----Get urls-----------------------------//
+        $ImageHotel = $request->file('Ticketimg')->store('public/Tickets');
+        $url = Storage::url($ImageHotel);
 
+        $CarbuImg = $request->file('ticketcarbu')->store('public/Tickets');
+        $urlCarbu = Storage::url($CarbuImg);
 
-      // Storage::disk('local')->put('nique', $fichierFinal);
-       // $test->save();
-        DB::insert('exec Dfrais ?, ?, ?, ?, ?, ?, ?, ?', array($idMission, $prixhotel, $prixcarbu, $prixManger, $pdate, $path, $imageCarbu, $imageManger));
+        $MangerImg = $request->file('ticketmanger')->store('public/Tickets');
+        $urlManger = Storage::url($MangerImg);
 
+        DB::insert('exec Dfrais ?, ?, ?, ?, ?, ?, ?, ?', array($idMission, $prixhotel, $prixcarbu, $prixManger, $pdate, $url, $urlCarbu, $urlManger));
         return redirect()->action('HomeController@show')->with('succes', 'Frais déclarés');
     }
 

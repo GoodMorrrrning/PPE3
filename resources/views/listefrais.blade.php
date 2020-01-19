@@ -41,7 +41,19 @@
                             Type frais : {{$frais->TypeCarburant}}, Montant de ce frais : {{$frais->MontantCarburant}}.
                             <br>
                             Type frais : {{$frais->TypeManger}}, Montant de ce frais : {{$frais->MontantManger}}.<br>
-                            <img src="{{asset("$frais->TicketHotel")}}" alt="nik">
+                            <div class="card" style="width: 18rem; display:block;">
+                            <img src="{{asset("$frais->TicketHotel")}}" class="img-fluid" alt="">
+                            <img src="{{asset("$frais->TicketCarbu")}}" class="img-fluid" alt="">
+                            <img src="{{asset("$frais->TicketManger")}}" class="img-fluid" alt="">
+                            <div class="card-body">
+                            <h5 class="card-title">Ticket Payements</h5>
+                            <p class="card-text">Clickez ici pour télécharger la preuve de frais des visiteurs médicaux.</p>
+                            <a href="{{asset("$frais->TicketHotel")}}" download class="btn btn-primary">Télécharger</a>
+                            </div>
+                            </div>
+
+                            <br>
+
                             @php
 
                             $somme = $frais->Montant+$frais->MontantCarburant+$frais->MontantManger;
