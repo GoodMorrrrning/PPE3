@@ -22,7 +22,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/missionlist', 'HomeController@show')->name('show');
-
 Route::get('/home/admin', 'AdminController@index')->name('homeAdmin');
 Route::resource('prat', 'PratController');
 Route::resource('user', 'UserController');

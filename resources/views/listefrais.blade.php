@@ -41,6 +41,7 @@
                             Type frais : {{$frais->TypeCarburant}}, Montant de ce frais : {{$frais->MontantCarburant}}.
                             <br>
                             Type frais : {{$frais->TypeManger}}, Montant de ce frais : {{$frais->MontantManger}}.<br>
+                            <img src="{{asset("$frais->TicketHotel")}}" alt="nik">
                             @php
 
                             $somme = $frais->Montant+$frais->MontantCarburant+$frais->MontantManger;

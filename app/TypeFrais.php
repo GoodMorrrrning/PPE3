@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class TypeFrais extends Model
 {
-  
-    protected $table = "TYPE_DE_FRAIS";
-    protected $primaryKey = "ID_TYPE_DE_FRAIS";
+
+    protected $table = "Type_Frais";
+    protected $primaryKey = "ID_Type_Frais";
     public $timestamps = false;
 
 
     protected $fillable = [
-       'LIBELLE', 'PLAFOND'
+       'NomType', 'Montant', 'ID_Notede_frais', 'Ticketimg'
       ];
 
       public function TypeFraisDepend(){
