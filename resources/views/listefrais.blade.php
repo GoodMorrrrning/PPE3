@@ -49,11 +49,11 @@
                             $test =$test+$somme;
 
                             @endphp
-<br><br>
+                            <br><br>
                             @if($frais->TicketHotel != null)
-                            <div class="card-group" style="position:relative">
+                            <div class="card-group">
                                 <div class="card"><img src="{{asset("$frais->TicketHotel")}}" class="card-img w-100 d-flex">
-                                    <div class="card-body" style="position:absolute; bottom:0; left:70px;">
+                                    <div class="card-body">
 
                                         <p class="card-text">Cliquez en dessous</p><a class="btn btn-primary" href="{{asset("$frais->TicketHotel")}}" download type="button">Télécharger !</a></div>
                                 </div>
@@ -71,7 +71,7 @@
                             <script src="assets/js/jquery.min.js"></script>
                             <script src="assets/bootstrap/js/bootstrap.min.js"></script>
                             @else
-                            <p class="card-text"> Image non Disponible.
+                            <p class="card-text"> Image non Disponible.</p>
                             @endif
 
                             <br>

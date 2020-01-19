@@ -20,11 +20,11 @@
 
 <br>
 
-
+{{var_dump($ImgData)}}
 
  <div class="col-md-6 custom-file">
     <label for="Ticketimg" class="custom-file-label">{{ __('Ticketimg') }}</label>
-     <input id="Ticketimg" type="file" class="custom-file-input @error('Ticketimg') is-invalid @enderror" name="Ticketimg" enctype="multipart/form-data" required autocomplete="Ticketimg" autofocus> @error('custom-file')
+     <input id="Ticketimg" type="file" class="custom-file-input @error('Ticketimg') is-invalid @enderror" name="Ticketimg" @if($ImgData[0] == '') required @endif enctype="multipart/form-data" autocomplete="Ticketimg" autofocus> @error('custom-file')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
@@ -44,7 +44,7 @@
 
 <div class="col-md-6 custom-file">
     <label for="ticketcarbu" class="custom-file-label">{{ __('ticketcarbu') }}</label>
-     <input id="ticketcarbu" type="file" class="custom-file-input @error('ticketcarbu') is-invalid @enderror" name="ticketcarbu" enctype="multipart/form-data" required autocomplete="Ticketimg" autofocus> @error('ticketcarbu')
+     <input id="ticketcarbu" type="file" class="custom-file-input @error('ticketcarbu') is-invalid @enderror" name="ticketcarbu" @if($ImgData[1] == '') required @endif enctype="multipart/form-data" autocomplete="Ticketimg" autofocus> @error('ticketcarbu')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
@@ -72,7 +72,7 @@
 
 <div class="col-md-6 custom-file">
     <label for="ticketmanger" class="custom-file-label">{{ __('ticketmanger') }}</label>
-     <input id="ticketmanger" type="file" class="custom-file-input @error('ticketmanger') is-invalid @enderror" name="ticketmanger" enctype="multipart/form-data" required autocomplete="ticketmanger" autofocus> @error('ticketmanger')
+     <input id="ticketmanger" type="file" class="custom-file-input @error('ticketmanger') is-invalid @enderror" name="ticketmanger" @if($ImgData[2] == '') required @endif enctype="multipart/form-data" autocomplete="ticketmanger" autofocus> @error('ticketmanger')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
