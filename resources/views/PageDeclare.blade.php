@@ -20,15 +20,29 @@
 
 <br>
 
-{{var_dump($ImgData)}}
-
- <div class="col-md-6 custom-file">
+ <div class="col-md-6 custom-file" style="float:left; display:inline-block; width:60%;">
     <label for="Ticketimg" class="custom-file-label">{{ __('Ticketimg') }}</label>
      <input id="Ticketimg" type="file" class="custom-file-input @error('Ticketimg') is-invalid @enderror" name="Ticketimg" @if($ImgData[0] == '') required @endif enctype="multipart/form-data" autocomplete="Ticketimg" autofocus> @error('custom-file')
      <span class="invalid-feedback" role="alert">
          <strong>{{ $message }}</strong>
   </span> @enderror
  </div>
+
+ @if($ImgData[0]!= '')
+ <div class="card text-white bg-dark mb-3" style="max-width: 540px; margin-left:60%; display:inline-block; width:40%;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+      <img src="{{asset("$ImgData[0]")}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-text">Image actuelle pour frais d'hotel</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ @endif
 
 <br>
 <label for="PrixCarbu" class="col-md-4 col-form-label text-md-center">{{ __('PrixCarbu') }}</label>
@@ -51,7 +65,21 @@
  </div>
 <br>
 
+@if($ImgData[1]!= '')
+<div class="card text-white bg-dark mb-3" style="max-width: 540px; margin-left:60%; display:inline-block; width:40%;">
+   <div class="row no-gutters">
+     <div class="col-md-4">
+     <img src="{{asset("$ImgData[1]")}}" class="card-img" alt="...">
+     </div>
+     <div class="col-md-8">
+       <div class="card-body">
+         <h5 class="card-text">Image actuelle pour frais de carburant</h5>
+       </div>
+     </div>
+   </div>
+ </div>
 
+@endif
 
 
 
@@ -79,6 +107,21 @@
  </div>
 <br>
 
+@if($ImgData[2]!= '')
+<div class="card text-white bg-dark mb-3" style="max-width: 540px; margin-left:60%; display:inline-block; width:40%;">
+   <div class="row no-gutters">
+     <div class="col-md-4">
+     <img src="{{asset("$ImgData[2]")}}" class="card-img" alt="...">
+     </div>
+     <div class="col-md-8">
+       <div class="card-body">
+         <h5 class="card-text">Image actuelle pour frais de nouriture</h5>
+       </div>
+     </div>
+   </div>
+ </div>
+
+@endif
 
 <br>
 
