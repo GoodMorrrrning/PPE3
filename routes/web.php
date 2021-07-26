@@ -13,7 +13,9 @@
 
 use App\Http\Controllers\AdminHome;
 use App\Mission;
-
+Route::get('/dashboard', function () {
+    return 'welcome to dashboard!';
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,3 +33,4 @@ Route::get('/home/missionlist/{n}', 'MissionDetail@detail')->name('missiondetail
 Route::post('mission/declare/{n}', 'MissionDetail@DeclareFrais')->name('declare');
 Route::get('mission/page/{n}', 'MissionDetail@edit')->name('pagedeclare');
 Route::get('/home/admin/fraisUser{n}', 'AdminController@FraisUser')->name('fraisuser');
+

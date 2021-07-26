@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
+
+
         <div class="col-md-8">
             <div class="card" id="test4">
                 <div class="card-header">Dashboard</div>
@@ -21,7 +21,7 @@
                         {{ Session::get('succes')}}
                     </div>
                     @endif
-                    </br>
+
                     Liste des Utilisateurs
 
                     <table class="table table-striped table-dark card-body table-bordered" id="tailleTab">
@@ -83,86 +83,86 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Ajouter une Mission à Monsieur {{$resp->NOM}}</h5>
+                                                <h5 class="modal-title text-dark"  id="exampleModalLabel">Ajouter une Mission à Monsieur {{$resp->NOM}}</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <form action="{{route('givemissions',$resp->ID_PERSONNELS)}}" method="post">
                                                     @csrf
-                                                    <div class="modal-body  justify-content-center">
+                                                    <div class="modal-body">
                                                         <!----------------------------------Body---------------------------------------------->
-                                                        <label for="NOM" class="col-md-4 col-form-label text-md-center">{{ __('NOM') }}</label>
-                                                        <div class="col-md-6">
-                                                            <input id="NOM" type="text" class="form-control @error('NOM') is-invalid @enderror" name="NOM" required autocomplete="NOM" autofocus> @error('NOM')
+                                                        <label for="NOM" class="text-dark">{{ __('NOM') }}</label>
+
+                                                            <input id="NOM" type="text" class="d-flex justify-content-center form-control   @error('NOM') is-invalid @enderror" name="NOM" required autocomplete="NOM" autofocus> @error('NOM')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span> @enderror
 
-                                                        </div>
+                                                            <br>
 
 
-                                                        <label for="DATE_MISSION" class="col-md-4 col-form-label text-md-center">{{ __('DATE_MISSION') }}</label>
-                                                        <div class="col-md-6">
+                                                        <label for="DATE_MISSION" class="text-dark">{{ __('DATE_MISSION') }}</label>
+
                                                             <input id="DATE_MISSION" type="date" class="form-control @error('DATE_MISSION') is-invalid @enderror" name="DATE_MISSION" required autocomplete="DATE_MISSION" autofocus> @error('DATE_MISSION')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span> @enderror
 
-                                                        </div>
+
+                                                            <br>
 
 
 
+                                                        <label for="RUE" class="text-dark">{{ __('RUE') }}</label>
 
-                                                        <label for="RUE" class="col-md-4 col-form-label text-md-center">{{ __('RUE') }}</label>
-                                                        <div class="col-md-6">
                                                             <input id="RUE" type="text" class="form-control @error('RUE') is-invalid @enderror" name="RUE" required autocomplete="RUE" autofocus> @error('RUE')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span> @enderror
 
-                                                        </div>
+
+                                                            <br>
 
 
 
 
+                                                        <label for="VILLE" class="text-dark">{{ __('VILLE') }}</label>
 
-                                                        <label for="VILLE" class="col-md-4 col-form-label text-md-center">{{ __('VILLE') }}</label>
-                                                        <div class="col-md-6">
                                                             <input id="VILLE" type="text" class="form-control @error('RUE') is-invalid @enderror" name="VILLE" required autocomplete="VILLE" autofocus> @error('VILLE')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span> @enderror
 
-                                                        </div>
+                                                            <br>
 
 
 
-                                                        <label for="DescriptionMission" class="col-md-4 col-form-label text-md-center">{{ __('DescriptionMission') }}</label>
-                                                        <div class="col-md-6">
+                                                        <label for="DescriptionMission" class="text-dark">{{ __('DescriptionMission') }}</label>
+
                                                             <input id="DescriptionMission" type="text" class="form-control @error('RUE') is-invalid @enderror" name="DescriptionMission" required autocomplete="DescriptionMission" autofocus> @error('DescriptionMission')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span> @enderror
+                                                            <br>
 
-                                                        </div>
 
 
-                                                          <label for="ID_Praticien" class="col-md-4 col-form-label text-md-center">{{ __('ID_Praticien') }}</label>
-                                                            <div class="col-md-6">
+                                                          <label for="ID_Praticien" class="text-dark">{{ __('ID_Praticien') }}</label>
+
                                                         <select class="custom-select col-md-12 col-form-label text-md-center" id="ID_Praticien" name="ID_Praticien">
                                                     <option selected>Choisir Praticien !</option>
                                                     @foreach($praticiens as $ListPrate)
                                                         <option value="{{$ListPrate->NOM}}">{{$ListPrate->NOM}}</option>
                                                    @endforeach
                                                 </select>
-                                                            </div>
+
                                                         <!--------------------------------End----Body------------------------------------>
 
-
+                                                        <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                                                         <button type="submit" class="btn btn-primary">Ajouter Mission</button>
-
+                                                        </div>
                                                 </form>
                                             </div>
                                         </div>

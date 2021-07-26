@@ -41,8 +41,8 @@ class HomeController extends Controller
 	{
         $id=auth()->id();
 
-        $value = array($id);
-        $details = \App\Mission::find($id);
+
+
         $procedure = DB::select('exec AfficheMission ?', array($id));
 
         return view('show')->with('procedure', $procedure);

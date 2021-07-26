@@ -43,7 +43,7 @@
    <h5>
             Nom et titre du Praticien: <strong>{{$test->Nom_Praticien}}</strong><br><br>
         Etat civil: <strong>{{$test->ETAT_CIVIL}}</strong><br><br>
-        Note du Praticien sur 20: <strong>{{$test->NOTE}}</strong>   NB : plus la note est élevée plus il sera enclin à acheter les produits du laboratoire<br><br>
+        Note du Praticien sur 20: <strong>{{$test->NOTE}}</strong>  <br>
         Notoriété: <strong>{{$test->NOTORIETE}}</strong><br><br>
         Le praticien est il membre d'une Association :<strong> @if($test->MENBRE_ASSOCIATION == 0) Non @else Oui @endif</strong><br><br>
         Diplome du Praticien : <strong>{{$test->DIPLOME}}</strong><br>
